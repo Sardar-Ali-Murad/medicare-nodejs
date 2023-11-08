@@ -30,6 +30,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const corsOptions = {
   origin: "https://blood-management-wine.vercel.app",
+  // origin: "http://localhost:3000",
   credentials: true,
 };
 
