@@ -11,9 +11,7 @@ let donarModel = new mongoose.Schema(
     },
     group: {
       type: String,
-      required: [true, "Please provide the group"],
-      minlength: 3,
-      maxlength: 20,
+      required: [true, "Please provide the group"]
     },
     state: {
       type: String,
