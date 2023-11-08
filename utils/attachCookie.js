@@ -6,6 +6,8 @@ const attachCookie = ({ res, token }) => {
     // expires: new Date(Date.now() + oneDay),
     // secure: process.env.NODE_ENV === 'production',
     // httpOnly: true,
+    sameSite: "none",
+    secure: "false",
     path: "/",
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30days
   });
