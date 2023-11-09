@@ -7,7 +7,7 @@ import morgan from "morgan";
 import cors from "cors";
 import TagsRoute from "./routes/QueryMessageRoute.js";
 import authRouter from "./routes/authRoutes.js";
-import donarRouter from "./routes/donarRoute.js"
+import donarRouter from "./routes/donarRoute.js";
 
 import helmet from "helmet";
 import xss from "xss-clean";
@@ -29,8 +29,12 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const corsOptions = {
-  origin: "https://blood-management-wine.vercel.app",
-  // origin: "http://localhost:3000",
+  origin: [
+    "https://blood-management-wine.vercel.app",
+    "https://medcarepk.online",
+    "https://www.medcarepk.online",
+    "http://localhost:3000"
+  ],
   credentials: true,
 };
 
@@ -47,7 +51,6 @@ app.use("/api/v1/donar", donarRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
-
 
 const port = process.env.PORT || 5000;
 
